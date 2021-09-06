@@ -1,0 +1,15 @@
+### DPDK ###
+
+# includes
+PCAPPP_INCLUDES += -I$(RTE_SDK)/build/include
+
+# libs dir
+PCAPPP_LIBS_DIR += -L$(RTE_SDK)/build/lib -L/lib64
+
+#flags
+PCAPPP_BUILD_FLAGS += -msse -msse2 -msse3 -Wall
+
+# libs
+PCAPPP_LIBS += -Wl,--whole-archive -lrte_kni -lrte_ethdev -lrte_eal -lrte_mbuf -lrte_mempool -lrte_ring -lrte_kvargs -lrte_hash -lrte_cmdline -lrt -lm -ldl -lpthread -Wl,--no-whole-archive
+
+

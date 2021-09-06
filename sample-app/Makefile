@@ -1,0 +1,27 @@
+#
+# Makefile for the PF_RING FT examples using DPDK >= 20 as capture framework
+#
+# Run 'make -f Makefile.dpdk' to compile the DPDK examples
+#
+# See http://core.dpdk.org/doc/quick-start/ for DPDK installation and setup
+#
+
+PKGCONF = pkg-config
+
+ifneq ($(shell pkg-config --exists libdpdk && echo 0),0)
+$(error "no installation of DPDK found")
+endif
+
+CFLAGS += -g -O3 -DHAVE_DPDK -I $(HOME)/PF_RING/userland/lib $(shell $(PKGCONF) --cflags libdpdk)
+# CFLAGS += $(WERROR_FLAGS) -Wno-strict-prototypes -Wno-missing-prototypes -Wno-missing-declarations -Wno-unused-parameter
+LDFLAGS += ../../system/PF_RING/userland/lib/libs/libpfring_ft_x86_64_dl.a $(shell $(PKGCONF) --libs libdpdk) -lpthread -ldl
+
+APP = ftflow_dpdk
+
+SRCS-y := ftflow_dpdk.c
+
+$(APP): $(SRCS-y) Makefile
+	$(CC) $(CFLAGS) $(SRCS-y) -o $@ $(LDFLAGS)
+
+clean:
+	rm -f $(APP) *.o *~

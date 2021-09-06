@@ -1,0 +1,14 @@
+goblin-dpdk/src/*.o
+goblin-dpdk/goblin_dpdk
+system/
+goblin-dpdk/.vscode/
+.vscode/
+dpdk-21.05/
+testpcap/.vscode/
+testpcap/build/*.*
+testpcap/*.pcap
+captureAppC++/.vscode/
+captureAppC++/build/*.*
+captureAppC++/Obj/*.*
+sample-app/.vscode
+pcapfies_sample/*.*
