@@ -5,7 +5,7 @@
     * For RHEL/Fedora systems these can be installed using.
         * $dnf groupinstall "Development Tools"
     * For Ubuntu/Debian systems these can be installed using
-            $apt install build-essential
+        * $apt install build-essential
     * For Alpine Linux,
         * &apk add gcc libc-dev bsd-compat-headers libexecinfo-dev
 * Python 3.5 or later.
