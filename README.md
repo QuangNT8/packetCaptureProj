@@ -9,10 +9,11 @@
     * For Alpine Linux,
         * &apk add gcc libc-dev bsd-compat-headers libexecinfo-dev
 * Python 3.5 or later.
-    * Meson (version 0.49.2+) and ninja
-        * $meson & ninja-build packages in most Linux distributions
-    * If the packaged version is below the minimum version, the latest versions can be installed from Python’s “pip” repository: 
-        * $pip3 install meson ninja
+      * meson install as root
+      * $sudo -i
+      * $curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+      * $python3 get-pip.py
+      * $python3 -m pip install meson
 * pyelftools (version 0.22+)
     * For Fedora systems it can be installed using 
         * $dnf install python-pyelftools
@@ -27,11 +28,6 @@
     * libnuma-dev in Debian/Ubuntu;
     * numactl-dev in Alpine Linux;
 2. Build libraries, drivers and test applications. [refer to](https://doc.dpdk.org/guides/linux_gsg/build_dpdk.html)
-   * meson install as root
-      * $sudo -i
-      * $curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-      * $python3 get-pip.py
-      * $python3 -m pip install meson
 ==================================================
     * $meson build
     * $cd build
