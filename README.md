@@ -1,6 +1,6 @@
 
 1. [Required Tools and Libraries.](https://doc.dpdk.org/guides/linux_gsg/sys_reqs.html#compilation-of-the-dpdk)
-===============================
+* ===============================
 * General development tools including a supported C compiler such as gcc (version 4.9+) or clang (version 3.4+).
     * For RHEL/Fedora systems these can be installed using.
         * $dnf groupinstall "Development Tools"
@@ -28,7 +28,7 @@
     * libnuma-dev in Debian/Ubuntu;
     * numactl-dev in Alpine Linux;
 2. Build libraries, drivers and test applications. [refer to](https://doc.dpdk.org/guides/linux_gsg/build_dpdk.html)
-==================================================
+* ==================================================
     * $meson build
     * $cd build
     * $ninja
