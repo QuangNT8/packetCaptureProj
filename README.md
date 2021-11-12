@@ -27,6 +27,11 @@
     * libnuma-dev in Debian/Ubuntu;
     * numactl-dev in Alpine Linux;
 2. Build libraries, drivers and test applications. [refer to](https://doc.dpdk.org/guides/linux_gsg/build_dpdk.html)
+   * meson install as root
+      $sudo -i
+      $curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+      $python3 get-pip.py
+      $python3 -m pip install meson
 ==================================================
     * $meson build
     * $cd build
